@@ -8,6 +8,8 @@ const listRoute = require("./routes/lists");
 const emailRoute = require("./routes/emails");
 const bookRoute = require("./routes/books");
 const quoteRoute = require("./routes/quotes");
+const cors = require("cors"); // Import the cors middleware
+
 
 
 
@@ -18,6 +20,15 @@ mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log("DB Connection Successfull")).catch((err) => console.log(err))
+
+
+const corsOptions = {
+  origin: "https://bouyoussefhamza-portfolio.netlify.app/",
+  optionsSuccessStatus: 200,
+};
+
+// Use cors middleware
+app.use(cors(corsOptions))
 
 // le run du serveur au niveau du port 8080
 app.listen(process.env.PORT || 8080, () => {
