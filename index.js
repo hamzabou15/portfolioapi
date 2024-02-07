@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 
 const corsOptions = {
-  origin: ["https://bouyoussefhamza-portfolio.netlify.app", "http://localhost:3000"],
+  origin: ["https://hamza-bouyoussef.netlify.app/", "http://localhost:3000" , "https://hamzabouyoussef.tech.app/" ],
 
   optionsSuccessStatus: 200,
 };
